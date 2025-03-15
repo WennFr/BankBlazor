@@ -2,6 +2,41 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>Hello, world!</h1>
+<section>
+    <div>
+        <img src="/images/hero.jpg" class="hero-img">
+    </div>
+</section>
 
-Welcome to your new app.
+<section id="login" class="container">
+    <h2>Customer Login</h2>
+    <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+
+        <button type="submit">Login</button>
+    </form>
+</section>
+
+<section id="dashboard" class="container">
+    <h2>Customer Dashboard</h2>
+    <div class="info">
+        <p><strong>Name:</strong> John Doe</p>
+        <p><strong>Email:</strong> johndoe@email.com</p>
+        <p><strong>Phone:</strong> +1234567890</p>
+    </div>
+</section>
+
+<section id="transactions" class="container">
+    <h2>Account Transactions</h2>
+    <div class="account">
+        <p><strong>Account Number:</strong> 123456789</p>
+        <p><strong>Balance:</strong> $5,000</p>
+    </div>
+    <button>Deposit</button>
+    <button>Withdraw</button>
+    <button>Transfer</button>
+</section>

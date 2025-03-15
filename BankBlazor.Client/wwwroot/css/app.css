@@ -1,5 +1,8 @@
-html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 h1:focus {
@@ -17,7 +20,7 @@ a, .btn-link {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 .content {
@@ -100,4 +103,113 @@ a, .btn-link {
 
 code {
     color: #c02d76;
+}
+
+/*CSS code for Bank Blazor App*/
+
+.app-body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    background: #000;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.header-text {
+    font-size: 2rem;
+}
+
+
+.logo {
+    margin-left: 10rem;
+    text-decoration: none;
+    color: white;
+}
+
+    .logo:hover {
+        text-decoration: none;
+        color: white;
+    }
+    .logo img {
+        height: 50px;
+        margin-right: 10px;
+    }
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+    nav ul li {
+        display: inline;
+        margin: 0 15px;
+    }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+.nav-items {
+    display: contents;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.container {
+    width: 80%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#login {
+    width: 30%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label, input, button {
+    margin: 10px 0;
+    padding: 10px;
+}
+
+button {
+    background: #0071c1;
+    color: white;
+    border: none;
+    cursor: pointer;
+    max-width: 100px;
+}
+
+    button:hover {
+        background: #0056b3;
+    }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #000;
+    color: white;
+    margin-top: 20px;
+    min-height: 50px;
+    margin-top: auto;
 }
