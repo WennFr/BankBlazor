@@ -1,16 +1,63 @@
 ﻿@page "/dashboard"
+@using Newtonsoft.Json;
+@inject HttpClient Client
 
 
-<section id="dashboard" class="container">
-    <h2>Customer Dashboard</h2>
-    <div class="info">
-        <p><strong>Name:</strong> John Doe</p>
-        <p><strong>Email:</strong> johndoe@email.com</p>
-        <p><strong>Phone:</strong> +1234567890</p>
-    </div>
-</section>
+@if (customer == null)
+{
+    <p>Loading...</p>
+
+
+}
+
+else
+{
+    <section id="dashboard" class="container">
+        <h2>Customer Dashboard</h2>
+        <div class="info">
+            <p><strong>Name:</strong> @customer.Givenname @customer.Surname</p>
+            <p><strong>Email:</strong> @customer.Emailaddress</p>
+            <p><strong>Phone:</strong> @customer.Telephonenumber</p>
+            <p><strong>Address:</strong> @customer.Streetaddress, @customer.City, @customer.Zipcode, @customer.Country</p>
+            <p><strong>Country Code:</strong> @customer.CountryCode</p>
+            <p><strong>Birthday:</strong> @customer.Birthday.ToString("yyyy-MM-dd")</p>
+            <p><strong>Telephone Country Code:</strong> @customer.Telephonecountrycode</p>
+        </div>
+    </section>
+}
 
 
 @code {
+
+    [Parameter]
+    public int Id { get; set; } = 1;
+
+    private CustomerViewModel customer;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        var request = new HttpRequestMessage(HttpMethod.Get, $"https://localhost:7140/api/Customer/{Id}");
+
+        try
+        {
+
+            using (var response = await Client.SendAsync(request))
+            {
+                response.EnsureSuccessStatusCode();
+                var body = await response.Content.ReadAsStringAsync();
+
+                customer = JsonConvert.DeserializeObject<CustomerViewModel>(body);
+            }
+
+
+        }
+        catch (Exception ex)
+        {
+            ex.Message.ToString();
+        }
+        StateHasChanged();
+
+    }
 
 }

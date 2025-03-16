@@ -11,8 +11,17 @@ namespace BankBlazor.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowBlazorClient", policy =>
+                {
+                    policy.WithOrigins("https://localhost:7249")  
+                          .AllowAnyMethod()                     
+                          .AllowAnyHeader();                    
+                });
+            });
 
+            // Add services to the container.
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
@@ -23,6 +32,8 @@ namespace BankBlazor.Api
             builder.Services.AddScoped<ICustomerService, CustomerService>();
 
             var app = builder.Build();
+
+            app.UseCors("AllowBlazorClient");
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
