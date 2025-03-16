@@ -1,3 +1,5 @@
+using BankBlazor.ServiceLibrary.Extensions;
+
 
 namespace BankBlazor.Api
 {
@@ -13,6 +15,9 @@ namespace BankBlazor.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            var connectionString = builder.Configuration.GetConnectionString("BankBlazorConnection")!;
+            builder.Services.AddBankBlazorContext(connectionString);
 
             var app = builder.Build();
 
