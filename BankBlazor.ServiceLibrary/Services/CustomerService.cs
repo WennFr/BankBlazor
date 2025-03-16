@@ -1,5 +1,6 @@
 ﻿using BankBlazor.ServiceLibrary.Contexts;
 using BankBlazor.ServiceLibrary.Entities;
+using BankBlazor.ServiceLibrary.Services.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BankBlazor.ServiceLibrary.Services
 {
-    public class CustomerService
+    public class CustomerService : ICustomerService
     {
         private readonly BankBlazorContext _dbContext;
 

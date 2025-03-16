@@ -1,4 +1,6 @@
 using BankBlazor.ServiceLibrary.Extensions;
+using BankBlazor.ServiceLibrary.Services;
+using BankBlazor.ServiceLibrary.Services.Interfaces;
 
 
 namespace BankBlazor.Api
@@ -18,6 +20,7 @@ namespace BankBlazor.Api
 
             var connectionString = builder.Configuration.GetConnectionString("BankBlazorConnection")!;
             builder.Services.AddBankBlazorContext(connectionString);
+            builder.Services.AddScoped<ICustomerService, CustomerService>();
 
             var app = builder.Build();
 
