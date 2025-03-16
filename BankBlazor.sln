@@ -5,6 +5,10 @@ VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankBlazor.Client", "BankBlazor.Client\BankBlazor.Client.csproj", "{424CB4AA-BEC3-479A-A99E-930490CB75E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankBlazor.Api", "BankBlazor.Api\BankBlazor.Api.csproj", "{BF9CDFAD-F5B7-4DCD-B41A-BF073142D3E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankBlazor.ServiceLibrary", "BankBlazor.ServiceLibrary\BankBlazor.ServiceLibrary.csproj", "{7C12C290-1737-4C92-B7F4-2158691BDDDA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{424CB4AA-BEC3-479A-A99E-930490CB75E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{424CB4AA-BEC3-479A-A99E-930490CB75E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{424CB4AA-BEC3-479A-A99E-930490CB75E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9CDFAD-F5B7-4DCD-B41A-BF073142D3E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9CDFAD-F5B7-4DCD-B41A-BF073142D3E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9CDFAD-F5B7-4DCD-B41A-BF073142D3E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9CDFAD-F5B7-4DCD-B41A-BF073142D3E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C12C290-1737-4C92-B7F4-2158691BDDDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C12C290-1737-4C92-B7F4-2158691BDDDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C12C290-1737-4C92-B7F4-2158691BDDDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C12C290-1737-4C92-B7F4-2158691BDDDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
