@@ -36,7 +36,7 @@ namespace BankBlazor.Api.Controllers
                 Zipcode = customerInfo.Zipcode,
                 Country = customerInfo.Country,
                 CountryCode = customerInfo.CountryCode,
-                Birthday = customerInfo.Birthday.Value.ToDateTime(TimeOnly.MinValue),
+                Birthday = customerInfo.Birthday.HasValue ? customerInfo.Birthday.Value.ToDateTime(TimeOnly.MinValue) : default(DateTime),
                 Telephonecountrycode = customerInfo.Telephonecountrycode,
                 Telephonenumber = customerInfo.Telephonenumber,
                 Emailaddress = customerInfo.Emailaddress
